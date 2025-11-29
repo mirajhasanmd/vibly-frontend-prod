@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { adminApi } from '@/api/api';
 import { toast } from 'sonner';
 import { Package, CreditCard, MapPin, Calendar, User, Phone, Mail, Settings, ArrowLeft } from 'lucide-react';
-import { StatusUpdateModal } from '../components/StatusUpdateModal';
 import { ShippingModal } from '../components/ShippingModal';
 
 export const OrderDetailsPage = () => {
