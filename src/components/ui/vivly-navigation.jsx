@@ -100,12 +100,10 @@ const ViblyNavigation = () => {
     }
   }, [authUser, fetchCartItems])
 
-  // Organize categories by gender
+  // Organize categories by gender - only men's categories
   const organizeCategories = () => {
     const organized = {
-      unisex: { title: "Unisex", href: "/products?gender=unisex", subcategories: [] },
-      men: { title: "Men's Fashion", href: "/products?gender=men", subcategories: [] },
-      women: { title: "Women's Fashion", href: "/products?gender=women", subcategories: [] }
+      men: { title: "Men's Fashion", href: "/products?gender=men", subcategories: [] }
     }
 
     const detectGenderFromName = (name) => {
@@ -115,42 +113,21 @@ const ViblyNavigation = () => {
       return 'unisex'
     }
 
-    const detectedForConsole = []
-
     categories.forEach(category => {
       const categoryName = category.name || ''
-     
       const categorySlug = categoryName.replace(/\s+/g, '+')
-     
       const apiGender = (category.gender || '')
       const detectedGender = apiGender || detectGenderFromName(category.name)
 
-     
+      // Only include men's categories
       if (detectedGender === 'men') {
         organized.men.subcategories.push({
           name: category.name,
           href: `/products?category=${categorySlug}`,
           gender: 'Men'
         })
-      } else if (detectedGender === 'women') {
-        organized.women.subcategories.push({
-          name: category.name,
-          href: `/products?category=${categorySlug}`,
-          gender: 'Women'
-        })
-      } else {
-        // Default to unisex for all other items (shirt, tshirt, etc.)
-        organized.unisex.subcategories.push({
-          name: category.name,
-          href: `/products?category=${categorySlug}`,
-          gender: 'Unisex'
-        })
       }
-
-      detectedForConsole.push({ name: category.name, slug: categorySlug, gender: detectedGender || 'unisex' })
     })
-
-   
 
     return organized
   }

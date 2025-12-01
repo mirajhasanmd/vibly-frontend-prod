@@ -145,8 +145,6 @@ const ProductFilterSidebar = ({
               {[
                 { value: "all", label: "All" },
                 { value: "men", label: "Men" },
-                { value: "women", label: "Women" },
-                { value: "unisex", label: "Unisex" },
               ].map((option) => (
                 <div key={option.value} className="flex items-center space-x-2">
                   <Checkbox

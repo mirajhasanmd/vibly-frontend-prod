@@ -47,8 +47,6 @@ const Footer = () => {
                 <li><a href="/" className="hover:text-foreground transition-colors">Home</a></li>
                 <li><a href="/products" className="hover:text-foreground transition-colors">All Products</a></li>
                 <li><a href="/products?gender=men" className="hover:text-foreground transition-colors">Men's Collection</a></li>
-                <li><a href="/products?gender=women" className="hover:text-foreground transition-colors">Women's Collection</a></li>
-                <li><a href="/products?gender=unisex" className="hover:text-foreground transition-colors">Unisex</a></li>
                 <li><a href="/products?isOnSale=true" className="hover:text-foreground transition-colors">Sale Items</a></li>
               </ul>
             </div>

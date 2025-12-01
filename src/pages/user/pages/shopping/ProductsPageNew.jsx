@@ -20,7 +20,7 @@ const ProductsPage = () => {
   const [loading, setLoading] = useState(true)
   const [viewMode, setViewMode] = useState('grid') // grid or list
   const [filters, setFilters] = useState({
-    gender: searchParams.get('gender') || 'all',
+    gender: searchParams.get('gender') || 'men',
     category: searchParams.get('category') || 'all',
     color: searchParams.get('color') || 'all',
     isOnSale: searchParams.get('isOnSale') || 'all',
@@ -46,7 +46,7 @@ const ProductsPage = () => {
         page,
         limit: 20,
         sort: filters.sort,
-        gender: filters.gender !== 'all' ? filters.gender : undefined,
+        gender: filters.gender !== 'all' ? filters.gender : 'men',
         category: filters.category !== 'all' ? filters.category : undefined,
         color: filters.color !== 'all' ? filters.color : undefined,
         isOnSale: filters.isOnSale !== 'all' ? filters.isOnSale : undefined,
@@ -122,7 +122,7 @@ const ProductsPage = () => {
   // Clear all filters
   const clearAllFilters = () => {
     const defaultFilters = {
-      gender: 'all',
+      gender: 'men',
       category: 'all',
       color: 'all',
       isOnSale: 'all',
@@ -158,7 +158,7 @@ const ProductsPage = () => {
   // Initialize filters from URL on component mount
   useEffect(() => {
     const urlFilters = {
-      gender: searchParams.get('gender') || 'all',
+      gender: searchParams.get('gender') || 'men',
       category: searchParams.get('category') || 'all',
       color: searchParams.get('color') || 'all',
       isOnSale: searchParams.get('isOnSale') || 'all',

@@ -45,8 +45,6 @@ import { useDebounce } from "@/hooks/useDebounce"
 const navigationLinks = [
   { href: "/", label: "Home", active: true },
   { href: "/products?gender=men", label: "Men" },
-  { href: "/products?gender=women", label: "Women" },
-  { href: "/products?gender=unisex", label: "Unisex" },
   { href: "/products", label: "All Products" },
 ]
 
